@@ -5,12 +5,12 @@ services:
         build:
             context: ./docker/php
         ports:
-            - 9000:9000
+            - 9000
         links:
             - mysql
         volumes:
             - ".:/var/www/app"
-            - "./docker/volumes/app:/var/www/app/var/log"
+            - "./docker/volumes/app/log:/var/www/app/var/log"
 
     mysql:
         image: mysql
@@ -28,11 +28,11 @@ services:
         ports:
             - "8080:80"
         links:
-            - php
+            - app
         volumes:
             - "./docker/volumes/nginx/:/var/log/nginx"
         volumes_from:
-            - php
+            - app
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
