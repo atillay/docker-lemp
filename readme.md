@@ -1,4 +1,9 @@
-# DOCKER LAMP
+# DOCKER LEMP
+- Nginx
+- PHP 7.2-fpm
+- MySQL
+- PHPMyAdmin
+- Maildev
 
 ## Quickstart 
 - Install and launch Docker  
