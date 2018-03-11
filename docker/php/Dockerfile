@@ -27,4 +27,4 @@ RUN docker-php-ext-install intl
 # OPTIONAL - additional conf
 COPY ./php.ini /usr/local/etc/php/
 
-WORKDIR /var/www/app
+WORKDIR /var/www
