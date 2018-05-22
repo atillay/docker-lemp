@@ -12,16 +12,6 @@ services:
         volumes:
             - ".:/var/www"
 
-    mysql:
-        image: mysql
-        environment:
-            - MYSQL_ROOT_PASSWORD=StrongPassword
-            - MYSQL_DATABASE=${DB_NAME}
-            - MYSQL_USER=${DB_USER}
-            - MYSQL_PASSWORD=${DB_PASSWORD}
-        volumes:
-            - "./docker/volumes/mysql:/var/lib/mysql"
-
     nginx:
         build:
             context: ./docker/nginx
@@ -33,6 +23,16 @@ services:
             - "./docker/volumes/nginx/:/var/log/nginx"
         volumes_from:
             - php
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=StrongPassword
+            - MYSQL_DATABASE=${DB_NAME}
+            - MYSQL_USER=${DB_USER}
+            - MYSQL_PASSWORD=${DB_PASSWORD}
+        volumes:
+            - "./docker/volumes/mysql:/var/lib/mysql"
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin

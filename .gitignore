@@ -1,4 +1,7 @@
+# Docker
+docker/volumes/
+.env
+
+# Misc
 .idea/
 .DS_Store
-.env
-var/

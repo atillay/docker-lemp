@@ -5,11 +5,17 @@
 - PHPMyAdmin
 - Maildev
 
-## Quickstart 
+## :rocket: Quickstart 
 - Install and launch Docker  
 - `cp .env.dist .env`  
 - `docker-compose up`
-- You can now visit `localhost:8084`, `localhost:8085` and `localhost:8086` 
+
+| Service      | Path                    |
+| ------------ | ----------------------- |
+| Website      | `http://localhost:8080` | 
+| PhpMyAdmin   | `http://localhost:8081` |
+| Mail catcher | `http://localhost:8082` |
+| Logs         | `docker/volumes/nginx/` |
 
 ## About MySQL
 If you change mysql infos in .env you have to delete directory: `docker/volumes/mysql` to see changes.   
