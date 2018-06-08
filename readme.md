@@ -18,7 +18,9 @@
 | Logs         | `log/`                  |
 
 ## About MySQL credentials
-If you change mysql credentials in .env you have to re-create mysql container (database will be erased):
+If you change mysql credentials in .env you have to re-create mysql container:
+- Database will be deleted, make a dump with PhpMyAdmin
 - Get the container name : `$ docker-compose ps | grep mysql`
 - Remove container : `$ docker rm {container_name}` (ex: `docker rm docker-lemp_mysql_1`)
 - Run : `docker-compose up` 
+- Re-import your database on PhpMyAdmin
