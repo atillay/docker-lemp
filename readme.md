@@ -20,5 +20,5 @@
 ## About MySQL
 If you change mysql infos in .env you have to re-create mysql container :  
 - Get the container name : `$ docker-compose ps | grep mysql`
-- Remove container : `$ docker-compose rm {container_name}` (ex: `docker-compose rm docker-lemp_mysql_1`)
+- Remove container : `$ docker rm {container_name}` (ex: `docker rm docker-lemp_mysql_1`)
 - Run : `docker-compose up` 
