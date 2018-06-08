@@ -17,8 +17,8 @@
 | Mail catcher | `http://localhost:8082` |
 | Logs         | `log/`                  |
 
-## About MySQL
-If you change mysql infos in .env you have to re-create mysql container :  
+## About MySQL credentials
+If you change mysql credentials in .env you have to re-create mysql container (database will be erased):
 - Get the container name : `$ docker-compose ps | grep mysql`
 - Remove container : `$ docker rm {container_name}` (ex: `docker rm docker-lemp_mysql_1`)
 - Run : `docker-compose up` 
