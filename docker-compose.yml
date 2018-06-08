@@ -1,28 +1,22 @@
-version: '2'
-
+version: '3'
 services:
 
     php:
         build:
             context: ./docker/php
-        links:
-            - mysql
         env_file:
             - .env
         volumes:
-            - ".:/var/www"
+            - .:/var/www
 
     nginx:
         build:
             context: ./docker/nginx
         ports:
-            - "${SERVER_PORT}:80"
-        links:
-            - php
+            - ${SERVER_PORT}:80
         volumes:
-            - "./docker/volumes/nginx/:/var/log/nginx"
-        volumes_from:
-            - php
+            - ./docker/volumes/nginx/:/var/log/nginx
+            - ./public:/var/www/public
 
     mysql:
         image: mysql:5.7
@@ -32,18 +26,16 @@ services:
             - MYSQL_USER=${DB_USER}
             - MYSQL_PASSWORD=${DB_PASSWORD}
         volumes:
-            - "./docker/volumes/mysql:/var/lib/mysql"
+            - ./docker/volumes/mysql:/var/lib/mysql
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         ports:
-            - "${PMA_PORT}:80"
-        links:
-            - mysql
+            - ${PMA_PORT}:80
         environment:
             - PMA_HOST=${DB_HOST}
 
     maildev:
         image: djfarrelly/maildev
         ports:
-            - "${MAILDEV_PORT}:80"
+            - ${MAILDEV_PORT}:80
