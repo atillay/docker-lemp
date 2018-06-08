@@ -7,6 +7,7 @@ services:
         env_file:
             - .env
         volumes:
+            - ./docker/php/php.ini:/usr/local/etc/php/php.ini
             - .:/var/www
 
     nginx:
@@ -15,7 +16,8 @@ services:
         ports:
             - ${SERVER_PORT}:80
         volumes:
-            - ./docker/volumes/nginx/:/var/log/nginx
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./log:/var/log/nginx
             - ./public:/var/www/public
 
     mysql:
@@ -26,7 +28,9 @@ services:
             - MYSQL_USER=${DB_USER}
             - MYSQL_PASSWORD=${DB_PASSWORD}
         volumes:
-            - ./docker/volumes/mysql:/var/lib/mysql
+            - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+            - ./log:/var/log/nginx
+            - ./public:/var/www/public
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin

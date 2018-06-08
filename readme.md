@@ -15,8 +15,10 @@
 | Website      | `http://localhost:8080` | 
 | PhpMyAdmin   | `http://localhost:8081` |
 | Mail catcher | `http://localhost:8082` |
-| Logs         | `docker/volumes/nginx/` |
+| Logs         | `log/`                  |
 
 ## About MySQL
-If you change mysql infos in .env you have to delete directory: `docker/volumes/mysql` to see changes.   
-It will delete the existing database !
+If you change mysql infos in .env you have to re-create mysql container :  
+- Get the container name : `$ docker-compose ps | grep mysql`
+- Remove container : `$ docker-compose rm {container_name}` (ex: `docker-compose rm docker-lemp_mysql_1`)
+- Run : `docker-compose up` 

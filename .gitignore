@@ -1,5 +1,4 @@
 .env
 .DS_Store
-/.idea/
-/docker/volumes/
-
+.idea/
+log/
