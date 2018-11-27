@@ -19,6 +19,7 @@
 
 ## :tent: Use a virtual host
 - On your machine, run `$ sudo nano /etc/hosts` and add `127.0.0.1   myhost.local`
+- Change the server name in `docker/nginx/nginx.conf#L3` to `myhost.local`
 - Modify `.env` and set `SERVER_PORT=80`
 - Run `$ docker-compose up`
 - If it fails make sure no service like Apache is running on port 80 
