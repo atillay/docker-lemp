@@ -17,6 +17,12 @@
 | Mail catcher | `http://localhost:8082` |
 | Logs         | `log/`                  |
 
+## :tent: Use a virtual host
+- On your machine, run `$ sudo nano /etc/hosts` and add `127.0.0.1   myhost.local`
+- Modify `.env` and set `SERVER_PORT=80`
+- Run `$ docker-compose up`
+- If it fails make sure no service like Apache is running on port 80 
+
 ## About MySQL credentials
 If you change mysql credentials in .env you have to re-create mysql container:
 - Database will be deleted, make a dump with PhpMyAdmin
