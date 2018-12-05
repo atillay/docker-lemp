@@ -18,8 +18,7 @@
 | Logs         | `log/`                  |
 
 ## :whale: Docker images
-https://github.com/atillay/docker-images/lemp
-
+https://github.com/atillay/docker-images/tree/master/lemp
 
 ## :tent: Use a virtual host
 - On your machine, run `$ sudo nano /etc/hosts` and add `127.0.0.1   myhost.local`
