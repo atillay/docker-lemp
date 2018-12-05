@@ -2,8 +2,7 @@ version: '3'
 services:
 
     php:
-        build:
-            context: ./docker/php
+        image: atillay/lemp-php
         env_file:
             - .env
         volumes:
@@ -11,8 +10,7 @@ services:
             - .:/var/www
 
     nginx:
-        build:
-            context: ./docker/nginx
+        image: atillay/lemp-nginx
         ports:
             - ${SERVER_PORT}:80
         volumes:
