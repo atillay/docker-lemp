@@ -25,6 +25,8 @@ services:
             - MYSQL_DATABASE=${DB_NAME}
             - MYSQL_USER=${DB_USER}
             - MYSQL_PASSWORD=${DB_PASSWORD}
+        volumes:
+            - ./docker/mysql/custom.cnf:/etc/mysql/conf.d/custom.cnf
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
