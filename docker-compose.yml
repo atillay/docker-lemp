@@ -2,7 +2,7 @@ version: '3'
 services:
 
     php:
-        image: atillay/lemp-php
+        image: atillay/lemp-php:7.3 # Also available : atillay/lemp-php:7.2
         env_file:
             - .env
         volumes:
